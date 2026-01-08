@@ -5,6 +5,9 @@ WORKDIR /app
 # Install Jupyter
 RUN pip install --no-cache-dir jupyter
 
+# Install PyTorch (CPU version)
+RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
 # Copy notebook files
 COPY . .
 
